@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>runter.net</title>
+
+  <script>
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("light-theme-loading");
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+
+  <nav class="navbar">
+    <a class="logo" href="/">runter.net</a>
+
+    <div class="nav-links">
+      <a href="/" data-i18n="nav.home"></a>
+      <a href="/about/" data-i18n="nav.about"></a>
+    </div>
+
+    <div class="nav-actions">
+      <select id="lang-select" aria-label="Language">
+        <option value="de">DE</option>
+        <option value="en">EN</option>
+      </select>
+
+      <button id="theme-toggle" type="button" data-i18n-aria="theme.toggle">
+        <span class="theme-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="tag" data-i18n="home.tag"></p>
+    <h1 data-i18n="home.title"></h1>
+    <p class="subtitle" data-i18n="home.subtitle"></p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2 data-i18n="home.aboutTitle"></h2>
+      <p data-i18n="home.aboutText"></p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="home.contentTitle"></h2>
+      <ul>
+        <li data-i18n="home.content1"></li>
+        <li data-i18n="home.content2"></li>
+        <li data-i18n="home.content3"></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="home.contactTitle"></h2>
+      <p data-i18n="home.contactText"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

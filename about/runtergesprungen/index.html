@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Runtergesprungen | runter.net</title>
+
+  <script>
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("light-theme-loading");
+  }
+  </script>
+
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body data-page="profile-runtergesprungen">
+
+  <nav class="navbar">
+    <a class="logo" href="../../">runter.net</a>
+
+    <div class="nav-links">
+      <a href="../../" data-i18n="nav.home"></a>
+      <a href="../" data-i18n="nav.about"></a>
+    </div>
+
+    <div class="nav-actions">
+      <select id="lang-select" aria-label="Language">
+        <option value="de">DE</option>
+        <option value="en">EN</option>
+      </select>
+
+      <button id="theme-toggle" type="button" data-i18n-aria="theme.toggle">
+        <span class="theme-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="profile-hero">
+    <img class="profile-large" src="../../assets/profile-placeholder.png" alt="Runtergesprungen" />
+
+    <div>
+      <p class="tag" data-i18n="profile.tag"></p>
+      <h1 data-i18n="profile.name"></h1>
+      <p class="subtitle" data-i18n="profile.subtitle"></p>
+
+      <div class="profile-links">
+        <a href="https://github.com/Runtergesprungen" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-tooltip="GitHub">
+          <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
+        </a>
+
+        <a href="https://discord.com/users/479984111671312385" target="_blank" rel="noopener noreferrer" aria-label="Discord" data-tooltip="Discord">
+          <img src="https://cdn.simpleicons.org/discord/white" alt="Discord">
+        </a>
+
+        <a href="https://steamcommunity.com/id/Runtergesprungen/" target="_blank" rel="noopener noreferrer" aria-label="Steam" data-tooltip="Steam">
+          <img src="https://cdn.simpleicons.org/steam/white" alt="Steam">
+        </a>
+
+        <a href="https://modrinth.com/user/Runtergesprungen" target="_blank" rel="noopener noreferrer" aria-label="Modrinth" data-tooltip="Modrinth">
+          <img src="https://cdn.simpleicons.org/modrinth/white" alt="Modrinth">
+        </a>
+
+        <a href="https://www.curseforge.com/members/runtergesprungen/projects" target="_blank" rel="noopener noreferrer" aria-label="CurseForge" data-tooltip="CurseForge">
+          <img src="https://cdn.simpleicons.org/curseforge/white" alt="CurseForge">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2 data-i18n="profile.aboutTitle"></h2>
+      <p data-i18n="profile.aboutText"></p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="profile.techTitle"></h2>
+      <ul>
+        <li data-i18n="profile.tech1"></li>
+        <li data-i18n="profile.tech2"></li>
+        <li data-i18n="profile.tech3"></li>
+        <li data-i18n="profile.tech4"></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="profile.projectsTitle"></h2>
+      <ul>
+        <li data-i18n="profile.project1"></li>
+        <li data-i18n="profile.project2"></li>
+        <li data-i18n="profile.project3"></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="profile.hardwareTitle"></h2>
+
+      <div class="hardware-grid">
+        <div class="hardware-box">
+          <h3 data-i18n="profile.hardwareMainTitle"></h3>
+
+          <div class="spec-grid">
+            <div class="spec-card">
+              <span class="spec-label" data-i18n="profile.label.cpu"></span>
+              <strong data-i18n="profile.hardwareMain1"></strong>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-label" data-i18n="profile.label.gpu"></span>
+              <strong data-i18n="profile.hardwareMain2"></strong>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-label" data-i18n="profile.label.ram"></span>
+              <strong data-i18n="profile.hardwareMain3"></strong>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-label" data-i18n="profile.label.mainboard"></span>
+              <strong data-i18n="profile.hardwareMain4"></strong>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-label" data-i18n="profile.label.cooling"></span>
+              <strong data-i18n="profile.hardwareMain5"></strong>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-label" data-i18n="profile.label.case"></span>
+              <strong data-i18n="profile.hardwareMain6"></strong>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-label" data-i18n="profile.label.psu"></span>
+              <strong data-i18n="profile.hardwareMain7"></strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hardware-box">
+          <h3 data-i18n="profile.hardwareServerTitle"></h3>
+          <ul>
+            <li data-i18n="profile.hardwareServer1"></li>
+            <li data-i18n="profile.hardwareServer2"></li>
+            <li data-i18n="profile.hardwareServer3"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="profile.personalTitle"></h2>
+      <p data-i18n="profile.personalText"></p>
+    </section>
+  </main>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

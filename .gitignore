@@ -1,0 +1,53 @@
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Editors / IDEs
+# -------------------------
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------
+# Node (if ever used later)
+# -------------------------
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# -------------------------
+# Build / output folders (future use)
+# -------------------------
+dist/
+build/
+out/
+
+# -------------------------
+# Environment files (just in case later)
+# -------------------------
+.env
+.env.local
+.env.*.local
+
+# -------------------------
+# Misc
+# -------------------------
+coverage/
+.tmp/
+.temp/

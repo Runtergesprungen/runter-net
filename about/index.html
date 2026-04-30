@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | runter.net</title>
+
+  <script>
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("light-theme-loading");
+  }
+  </script>
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-page="about">
+
+  <nav class="navbar">
+    <a class="logo" href="../">runter.net</a>
+
+    <div class="nav-links">
+      <a href="../" data-i18n="nav.home"></a>
+      <a href="./" data-i18n="nav.about"></a>
+    </div>
+
+    <div class="nav-actions">
+      <select id="lang-select" aria-label="Language">
+        <option value="de">DE</option>
+        <option value="en">EN</option>
+      </select>
+
+      <button id="theme-toggle" type="button" data-i18n-aria="theme.toggle">
+        <span class="theme-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="tag" data-i18n="about.tag"></p>
+    <h1 data-i18n="about.title"></h1>
+    <p class="subtitle" data-i18n="about.subtitle"></p>
+  </header>
+
+  <main>
+    <section class="member-list">
+
+      <a class="member-card red" href="runtergesprungen/">
+        <img class="profile-picture" src="../assets/profile-placeholder.png" alt="Runtergesprungen" />
+        <div>
+          <h2>Runtergesprungen</h2>
+          <p data-i18n="about.placeholder"></p>
+        </div>
+      </a>
+
+      <a class="member-card red" href="#">
+        <img class="profile-picture" src="../assets/profile-placeholder.png" alt="Runtergerollt" />
+        <div>
+          <h2>Runtergerollt</h2>
+          <p data-i18n="about.placeholder"></p>
+        </div>
+      </a>
+
+      <a class="member-card purple" href="#">
+        <img class="profile-picture" src="../assets/profile-placeholder.png" alt="Runtergedrückt" />
+        <div>
+          <h2>Runtergedrückt</h2>
+          <p data-i18n="about.placeholder"></p>
+        </div>
+      </a>
+
+    </section>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
