@@ -1,2 +1,9 @@
-# runter-net
-runter.net source code
+# runter.net
+
+Personal website and project showcase.
+
+## Tech
+HTML, CSS, JavaScript
+
+## Notes
+Work in progress.
