@@ -1,5 +1,11 @@
 {
   "nav.home": "Home",
   "nav.about": "About",
-  "theme.toggle": "Theme wechseln"
+  "nav.projects": "Projekte",
+  "theme.toggle": "Theme wechseln",
+
+  "footer.name": "Runtergesprungen",
+  "footer.rights": "Alle Rechte vorbehalten.",
+  "footer.report": "Problem melden",
+  "footer.github": "GitHub"
 }
