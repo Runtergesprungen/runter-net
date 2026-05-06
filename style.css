@@ -569,7 +569,19 @@ html.light-theme-loading .profile-links img {
 @media (max-width: 700px) {
   .navbar {
     flex-wrap: wrap;
-    padding: 14px 20px;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .logo {
+    min-width: auto;
+    max-width: calc(100vw - 160px);
+    overflow-wrap: anywhere;
+  }
+
+  .nav-actions {
+    min-width: auto;
+    margin-left: auto;
   }
 
   .nav-links {
@@ -578,20 +590,33 @@ html.light-theme-loading .profile-links img {
     justify-content: center;
   }
 
-  .nav-actions {
-    margin-left: auto;
+  main {
+    width: 100%;
+    padding: 20px 16px;
+  }
+
+  .member-list {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .member-card {
+    width: 100%;
   }
 
   .profile-hero {
+    width: 100%;
+    padding: 60px 16px 40px;
     flex-direction: column;
     text-align: center;
   }
 
-  .profile-links {
-    justify-content: center;
+  h1 {
+    font-size: clamp(32px, 10vw, 48px);
+    overflow-wrap: anywhere;
   }
 
-  main {
-    padding: 20px;
+  .profile-links {
+    justify-content: center;
   }
 }
