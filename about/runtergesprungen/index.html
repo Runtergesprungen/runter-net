@@ -1,67 +1,63 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Runtergesprungen | runter.net</title>
 
-  <script>
-  if (localStorage.getItem("theme") === "light") {
-    document.documentElement.classList.add("light-theme-loading");
-  }
-  </script>
-
-  <link rel="stylesheet" href="../../style.css" />
+  <script src="/theme-preload.js"></script>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body data-page="profile-runtergesprungen">
 
   <nav class="navbar">
-    <a class="logo" href="../../">runter.net</a>
+    <a class="logo" href="/en/">runter.net</a>
 
     <div class="nav-links">
-      <a href="../../" data-i18n="nav.home"></a>
-      <a href="../" data-i18n="nav.about"></a>
+      <a href="/en/" data-i18n="nav.home">Home</a>
+      <a href="/en/about/" data-i18n="nav.about">About</a>
+      <a href="/en/projects/" data-i18n="nav.projects">Projects</a>
     </div>
 
     <div class="nav-actions">
       <select id="lang-select" aria-label="Language">
         <option value="de">DE</option>
-        <option value="en">EN</option>
+        <option value="en" selected>EN</option>
       </select>
 
-      <button id="theme-toggle" type="button" data-i18n-aria="theme.toggle">
+      <button id="theme-toggle" type="button" aria-label="Toggle theme" data-i18n-aria="theme.toggle">
         <span class="theme-icon"></span>
       </button>
     </div>
   </nav>
 
   <header class="profile-hero">
-    <img class="profile-large" src="../../assets/profile-placeholder.png" alt="Runtergesprungen" />
+    <img class="profile-large" src="/assets/profile-placeholder.png" alt="Runtergesprungen" />
 
     <div>
-      <p class="tag" data-i18n="profile.tag"></p>
-      <h1 data-i18n="profile.name"></h1>
-      <p class="subtitle" data-i18n="profile.subtitle"></p>
+      <p class="tag" data-i18n="profile.tag">Profile</p>
+      <h1 data-i18n="profile.name">Runtergesprungen</h1>
+      <p class="subtitle" data-i18n="profile.subtitle">Placeholder</p>
 
       <div class="profile-links">
         <a href="https://github.com/Runtergesprungen" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-tooltip="GitHub">
-          <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
+          <img src="/assets/icons/github.svg" alt="GitHub">
         </a>
 
         <a href="https://discord.com/users/479984111671312385" target="_blank" rel="noopener noreferrer" aria-label="Discord" data-tooltip="Discord">
-          <img src="https://cdn.simpleicons.org/discord/white" alt="Discord">
+          <img src="/assets/icons/discord.svg" alt="Discord">
         </a>
 
         <a href="https://steamcommunity.com/id/Runtergesprungen/" target="_blank" rel="noopener noreferrer" aria-label="Steam" data-tooltip="Steam">
-          <img src="https://cdn.simpleicons.org/steam/white" alt="Steam">
+          <img src="/assets/icons/steam.svg" alt="Steam">
         </a>
 
         <a href="https://modrinth.com/user/Runtergesprungen" target="_blank" rel="noopener noreferrer" aria-label="Modrinth" data-tooltip="Modrinth">
-          <img src="https://cdn.simpleicons.org/modrinth/white" alt="Modrinth">
+          <img src="/assets/icons/modrinth.svg" alt="Modrinth">
         </a>
 
         <a href="https://www.curseforge.com/members/runtergesprungen/projects" target="_blank" rel="noopener noreferrer" aria-label="CurseForge" data-tooltip="CurseForge">
-          <img src="https://cdn.simpleicons.org/curseforge/white" alt="CurseForge">
+          <img src="/assets/icons/curseforge.svg" alt="CurseForge">
         </a>
       </div>
     </div>
@@ -69,104 +65,104 @@
 
   <main>
     <section class="card">
-      <h2 data-i18n="profile.aboutTitle"></h2>
-      <p data-i18n="profile.aboutText"></p>
+      <h2 data-i18n="profile.aboutTitle">About Me</h2>
+      <p data-i18n="profile.aboutText">I am particularly interested in technology, especially PC hardware, servers, and networking. In my free time I enjoy programming and working on my own projects.</p>
     </section>
 
     <section class="card">
-      <h2 data-i18n="profile.techTitle"></h2>
+      <h2 data-i18n="profile.techTitle">Technical Skills</h2>
       <ul>
-        <li data-i18n="profile.tech1"></li>
-        <li data-i18n="profile.tech2"></li>
-        <li data-i18n="profile.tech3"></li>
-        <li data-i18n="profile.tech4"></li>
+        <li data-i18n="profile.tech1">Basic knowledge of Python and Java</li>
+        <li data-i18n="profile.tech2">Experience with HTML and CSS</li>
+        <li data-i18n="profile.tech3">Setting up and managing game servers (Minecraft, Valheim, etc.)</li>
+        <li data-i18n="profile.tech4">Basic understanding of networking (DNS, DynDNS, port forwarding)</li>
       </ul>
     </section>
 
     <section class="card">
-      <h2 data-i18n="profile.projectsTitle"></h2>
+      <h2 data-i18n="profile.projectsTitle">Current Projects</h2>
       <ul>
-        <li data-i18n="profile.project1"></li>
-        <li data-i18n="profile.project2"></li>
-        <li data-i18n="profile.project3"></li>
+        <li data-i18n="profile.project1">This website (runter.net)</li>
+        <li data-i18n="profile.project2">Minecraft mod: Multi Dimensions</li>
+        <li data-i18n="profile.project3">Building a home server for family and personal projects</li>
       </ul>
     </section>
 
     <section class="card">
-      <h2 data-i18n="profile.hardwareTitle"></h2>
+      <h2 data-i18n="profile.hardwareTitle">Hardware</h2>
 
       <div class="hardware-grid">
         <div class="hardware-box">
-          <h3 data-i18n="profile.hardwareMainTitle"></h3>
+          <h3 data-i18n="profile.hardwareMainTitle">Main PC</h3>
 
           <div class="spec-grid">
             <div class="spec-card">
-              <span class="spec-label" data-i18n="profile.label.cpu"></span>
-              <strong data-i18n="profile.hardwareMain1"></strong>
+              <span class="spec-label" data-i18n="profile.label.cpu">CPU</span>
+              <strong data-i18n="profile.hardwareMain1">AMD Ryzen 7 9800X3D</strong>
             </div>
 
             <div class="spec-card">
-              <span class="spec-label" data-i18n="profile.label.gpu"></span>
-              <strong data-i18n="profile.hardwareMain2"></strong>
+              <span class="spec-label" data-i18n="profile.label.gpu">GPU</span>
+              <strong data-i18n="profile.hardwareMain2">PNY XLR8 GeForce RTX 4090</strong>
             </div>
 
             <div class="spec-card">
-              <span class="spec-label" data-i18n="profile.label.ram"></span>
-              <strong data-i18n="profile.hardwareMain3"></strong>
+              <span class="spec-label" data-i18n="profile.label.ram">RAM</span>
+              <strong data-i18n="profile.hardwareMain3">128GB Corsair Vengeance RGB DDR5 6000</strong>
             </div>
 
             <div class="spec-card">
-              <span class="spec-label" data-i18n="profile.label.mainboard"></span>
-              <strong data-i18n="profile.hardwareMain4"></strong>
+              <span class="spec-label" data-i18n="profile.label.mainboard">Motherboard</span>
+              <strong data-i18n="profile.hardwareMain4">MSI MAG X670E Tomahawk WiFi</strong>
             </div>
 
             <div class="spec-card">
-              <span class="spec-label" data-i18n="profile.label.cooling"></span>
-              <strong data-i18n="profile.hardwareMain5"></strong>
+              <span class="spec-label" data-i18n="profile.label.cooling">Cooling</span>
+              <strong data-i18n="profile.hardwareMain5">NZXT Kraken Elite 360</strong>
             </div>
 
             <div class="spec-card">
-              <span class="spec-label" data-i18n="profile.label.case"></span>
-              <strong data-i18n="profile.hardwareMain6"></strong>
+              <span class="spec-label" data-i18n="profile.label.case">Case</span>
+              <strong data-i18n="profile.hardwareMain6">Lian Li O11 Dynamic EVO XL</strong>
             </div>
 
             <div class="spec-card">
-              <span class="spec-label" data-i18n="profile.label.psu"></span>
-              <strong data-i18n="profile.hardwareMain7"></strong>
+              <span class="spec-label" data-i18n="profile.label.psu">Power Supply</span>
+              <strong data-i18n="profile.hardwareMain7">be quiet! Straight Power 11 1000W Platinum</strong>
             </div>
           </div>
         </div>
 
         <div class="hardware-box">
-          <h3 data-i18n="profile.hardwareServerTitle"></h3>
+          <h3 data-i18n="profile.hardwareServerTitle">Home Server</h3>
           <ul>
-            <li data-i18n="profile.hardwareServer1"></li>
-            <li data-i18n="profile.hardwareServer2"></li>
-            <li data-i18n="profile.hardwareServer3"></li>
+            <li data-i18n="profile.hardwareServer1">System: Custom build (planned)</li>
+            <li data-i18n="profile.hardwareServer2">Usage: Game servers, testing and personal projects</li>
+            <li data-i18n="profile.hardwareServer3">Status: Work in progress</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2 data-i18n="profile.personalTitle"></h2>
-      <p data-i18n="profile.personalText"></p>
+      <h2 data-i18n="profile.personalTitle">Other</h2>
+      <p data-i18n="profile.personalText">I am active as a volunteer in the German Red Cross, both in disaster response and in the youth organization. I also enjoy hands-on work such as gardening, woodworking, and soldering.</p>
     </section>
   </main>
 
   <footer class="footer">
     <p>
-      © 2026
-      <a href="/about/runtergesprungen/" data-i18n="footer.name"></a>.
-      <span data-i18n="footer.rights"></span>
+      &copy; 2026
+      <a href="/en/about/runtergesprungen/" data-i18n="footer.name">Runtergesprungen</a>.
+      <span data-i18n="footer.rights">All rights reserved.</span>
     </p>
 
     <div class="footer-links">
-      <a href="https://github.com/Runtergesprungen/runter-net/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.report"></a>
-      <a href="https://github.com/Runtergesprungen" target="_blank" rel="noopener noreferrer" data-i18n="footer.github"></a>
+      <a href="https://github.com/Runtergesprungen/runter-net/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.report">Report issue</a>
+      <a href="https://github.com/Runtergesprungen" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub</a>
     </div>
   </footer>
 
-  <script src="../../script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>

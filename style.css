@@ -16,7 +16,7 @@ body {
   background: #121212;
   color: #f5f5f5;
   line-height: 1.6;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, opacity 0.18s ease;
 }
 
 html.light-theme-loading body {
@@ -28,9 +28,11 @@ html.light-theme-loading body {
 .member-card,
 .hardware-box,
 .spec-card,
+.project-card,
 .navbar,
 .nav-links,
 .profile-links a,
+.footer a,
 button,
 select {
   transition:
@@ -140,6 +142,16 @@ select:hover {
   background: #2e2e2e;
 }
 
+/* Unified hover glow */
+
+button:hover,
+select:hover,
+.nav-links a:hover,
+.footer a:hover {
+  border-color: #ec4899;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+}
+
 button:focus,
 select:focus,
 a:focus {
@@ -160,19 +172,14 @@ a:focus {
   height: 100%;
   display: block;
   background: currentColor;
-  mask: url("https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/moon.svg") center / contain no-repeat;
-  -webkit-mask: url("https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/moon.svg") center / contain no-repeat;
+  mask: url("/assets/icons/moon.svg") center / contain no-repeat;
+  -webkit-mask: url("/assets/icons/moon.svg") center / contain no-repeat;
 }
 
 body.light-theme .theme-icon::before,
 html.light-theme-loading .theme-icon::before {
-  mask: url("https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/sun.svg") center / contain no-repeat;
-  -webkit-mask: url("https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/sun.svg") center / contain no-repeat;
-}
-
-#theme-toggle:hover {
-  border-color: #ec4899;
-  box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+  mask: url("/assets/icons/sun.svg") center / contain no-repeat;
+  -webkit-mask: url("/assets/icons/sun.svg") center / contain no-repeat;
 }
 
 /* Hero */
@@ -448,6 +455,99 @@ main {
   color: #f5f5f5;
 }
 
+/* Projects */
+
+.project-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 20px;
+  overflow: hidden;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: #ec4899;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.3);
+  transform: translateY(-3px);
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #2a2a2a;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-card h2 {
+  margin: 0;
+}
+
+.project-card p {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.project-links a {
+  color: #ec4899;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.project-links a:hover {
+  background: rgba(236, 72, 153, 0.12);
+}
+
+body.light-theme .project-card,
+html.light-theme-loading .project-card {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .project-card:hover,
+html.light-theme-loading .project-card:hover {
+  background: #fdf2f8;
+  border-color: #ec4899;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+}
+
+body.light-theme .project-card p,
+html.light-theme-loading .project-card p {
+  color: #475569;
+}
+
 /* Footer */
 
 .footer {
@@ -475,7 +575,8 @@ main {
 .footer a {
   color: #b3b3b3;
   text-decoration: none;
-  transition: color 0.2s ease;
+  border-radius: 999px;
+  padding: 4px 8px;
 }
 
 .footer a:hover {

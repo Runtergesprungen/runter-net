@@ -1,80 +1,61 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>runter.net</title>
 
   <script>
-  if (localStorage.getItem("theme") === "light") {
-    document.documentElement.classList.add("light-theme-loading");
-  }
+    (function () {
+      const supportedLanguages = ["de", "en"];
+      const defaultLanguage = "en";
+
+      function getStoredLanguage() {
+        try {
+          return localStorage.getItem("lang");
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function getBrowserLanguage() {
+        const languages = navigator.languages && navigator.languages.length
+          ? navigator.languages
+          : [navigator.language];
+
+        for (const language of languages) {
+          const shortLanguage = String(language).toLowerCase().split("-")[0];
+
+          if (supportedLanguages.includes(shortLanguage)) {
+            return shortLanguage;
+          }
+        }
+
+        return defaultLanguage;
+      }
+
+      const storedLanguage = getStoredLanguage();
+      const language = supportedLanguages.includes(storedLanguage)
+        ? storedLanguage
+        : getBrowserLanguage();
+
+      window.location.replace(`/${language}/`);
+    })();
   </script>
 
-  <link rel="stylesheet" href="style.css" />
+  <meta http-equiv="refresh" content="0; url=/en/" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
-<body data-page="home">
-
-  <nav class="navbar">
-    <a class="logo" href="/">runter.net</a>
-
-    <div class="nav-links">
-      <a href="/" data-i18n="nav.home"></a>
-      <a href="/about/" data-i18n="nav.about"></a>
-    </div>
-
-    <div class="nav-actions">
-      <select id="lang-select" aria-label="Language">
-        <option value="de">DE</option>
-        <option value="en">EN</option>
-      </select>
-
-      <button id="theme-toggle" type="button" data-i18n-aria="theme.toggle">
-        <span class="theme-icon"></span>
-      </button>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <p class="tag" data-i18n="home.tag"></p>
-    <h1 data-i18n="home.title"></h1>
-    <p class="subtitle" data-i18n="home.subtitle"></p>
-  </header>
-
+<body>
   <main>
     <section class="card">
-      <h2 data-i18n="home.aboutTitle"></h2>
-      <p data-i18n="home.aboutText"></p>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="home.contentTitle"></h2>
-      <ul>
-        <li data-i18n="home.content1"></li>
-        <li data-i18n="home.content2"></li>
-        <li data-i18n="home.content3"></li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="home.contactTitle"></h2>
-      <p data-i18n="home.contactText"></p>
+      <h1>runter.net</h1>
+      <p>Choose a language:</p>
+      <p>
+        <a href="/en/">English</a>
+        <a href="/de/">Deutsch</a>
+      </p>
     </section>
   </main>
-
-  <footer class="footer">
-    <p>
-      © 2026
-      <a href="/about/runtergesprungen/" data-i18n="footer.name"></a>.
-      <span data-i18n="footer.rights"></span>
-    </p>
-
-    <div class="footer-links">
-      <a href="https://github.com/Runtergesprungen/runter-net/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.report"></a>
-      <a href="https://github.com/Runtergesprungen" target="_blank" rel="noopener noreferrer" data-i18n="footer.github"></a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
