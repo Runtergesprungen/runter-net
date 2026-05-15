@@ -2,6 +2,8 @@
 html {
   scrollbar-gutter: stable;
   overflow-y: scroll;
+  min-height: 100%;
+  background: #121212;
 }
 
 * {
@@ -12,6 +14,7 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   background: #121212;
   color: #f5f5f5;
@@ -19,9 +22,13 @@ body {
   transition: background 0.15s ease, color 0.15s ease, opacity 0.18s ease;
 }
 
+html.light-theme-loading {
+  background: #f8fafc;
+}
+
 html.light-theme-loading body {
-  background: #f4f4f5;
-  color: #111827;
+  background: #f8fafc;
+  color: #172033;
 }
 
 .card,
@@ -224,6 +231,24 @@ main {
 
 .card h2 {
   margin-top: 0;
+}
+
+body:not(.light-theme) .card a {
+  color: #f472b6;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 1px 4px;
+  margin: -1px -4px;
+  background:
+    linear-gradient(rgba(236, 72, 153, 0.18), rgba(236, 72, 153, 0.18)) left bottom / 100% 1px no-repeat;
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+body:not(.light-theme) .card a:hover {
+  color: #f9a8d4;
+  background-color: rgba(236, 72, 153, 0.12);
+  box-shadow: 0 0 14px rgba(236, 72, 153, 0.16);
 }
 
 /* Member list */
@@ -521,31 +546,18 @@ main {
   color: #ec4899;
   text-decoration: none;
   font-weight: 600;
+  border: 1px solid rgba(236, 72, 153, 0.3);
   border-radius: 999px;
-  padding: 4px 8px;
+  padding: 5px 10px;
+  background: rgba(236, 72, 153, 0.08);
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .project-links a:hover {
-  background: rgba(236, 72, 153, 0.12);
-}
-
-body.light-theme .project-card,
-html.light-theme-loading .project-card {
-  background: #ffffff;
-  border-color: #e5e7eb;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-}
-
-body.light-theme .project-card:hover,
-html.light-theme-loading .project-card:hover {
-  background: #fdf2f8;
+  color: #f9a8d4;
+  background: rgba(236, 72, 153, 0.16);
   border-color: #ec4899;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
-}
-
-body.light-theme .project-card p,
-html.light-theme-loading .project-card p {
-  color: #475569;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.2);
 }
 
 /* Footer */
@@ -587,111 +599,171 @@ html.light-theme-loading .project-card p {
 
 body.light-theme,
 html.light-theme-loading body {
-  background: #f4f4f5;
-  color: #111827;
+  background:
+    linear-gradient(180deg, #ffffff 0, #f8fafc 280px, #eef2f7 100%);
+  color: #172033;
 }
 
 body.light-theme .navbar,
 html.light-theme-loading .navbar {
-  background: rgba(255, 255, 255, 0.9);
-  border-bottom-color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom-color: rgba(148, 163, 184, 0.35);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .logo,
+html.light-theme-loading .logo {
+  color: #be185d;
 }
 
 body.light-theme .logo:hover,
 html.light-theme-loading .logo:hover {
-  background: #fce7f3;
+  color: #9d174d;
+  background: #fdf2f8;
 }
 
 body.light-theme .nav-links,
 html.light-theme-loading .nav-links {
-  background: #f1f5f9;
-  border-color: #e5e7eb;
+  background: rgba(241, 245, 249, 0.82);
+  border-color: rgba(203, 213, 225, 0.8);
 }
 
 body.light-theme .nav-links a,
 html.light-theme-loading .nav-links a {
-  color: #475569;
+  color: #526174;
 }
 
 body.light-theme .nav-links a:hover,
 html.light-theme-loading .nav-links a:hover {
-  color: #111827;
-  background: #e2e8f0;
+  color: #172033;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
 }
 
 body.light-theme button,
 body.light-theme select,
 html.light-theme-loading button,
 html.light-theme-loading select {
-  background: #f1f5f9;
-  color: #111827;
+  background: #ffffff;
+  color: #172033;
   border-color: #cbd5e1;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
 }
 
 body.light-theme button:hover,
 body.light-theme select:hover,
 html.light-theme-loading button:hover,
 html.light-theme-loading select:hover {
-  background: #e2e8f0;
+  background: #fdf2f8;
+  border-color: #f9a8d4;
 }
 
 body.light-theme .subtitle,
 body.light-theme .member-card p,
 body.light-theme .spec-label,
+body.light-theme .project-card p,
 html.light-theme-loading .subtitle,
 html.light-theme-loading .member-card p,
-html.light-theme-loading .spec-label {
-  color: #475569;
+html.light-theme-loading .spec-label,
+html.light-theme-loading .project-card p {
+  color: #526174;
 }
 
 body.light-theme .card,
 body.light-theme .member-card,
 body.light-theme .hardware-box,
 body.light-theme .spec-card,
+body.light-theme .project-card,
 html.light-theme-loading .card,
 html.light-theme-loading .member-card,
 html.light-theme-loading .hardware-box,
-html.light-theme-loading .spec-card {
-  background: #ffffff;
-  border-color: #e5e7eb;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+html.light-theme-loading .spec-card,
+html.light-theme-loading .project-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(203, 213, 225, 0.85);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07);
 }
 
 body.light-theme .card:hover,
 body.light-theme .hardware-box:hover,
 body.light-theme .spec-card:hover,
+body.light-theme .project-card:hover,
 html.light-theme-loading .card:hover,
 html.light-theme-loading .hardware-box:hover,
-html.light-theme-loading .spec-card:hover {
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+html.light-theme-loading .spec-card:hover,
+html.light-theme-loading .project-card:hover {
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
 }
 
 body.light-theme .card h2,
 body.light-theme .spec-card strong,
+body.light-theme .project-card h2,
 html.light-theme-loading .card h2,
-html.light-theme-loading .spec-card strong {
-  color: #111827;
+html.light-theme-loading .spec-card strong,
+html.light-theme-loading .project-card h2 {
+  color: #172033;
+}
+
+body.light-theme .card a,
+html.light-theme-loading .card a {
+  color: #8f2857;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 1px 4px;
+  margin: -1px -4px;
+  background:
+    linear-gradient(rgba(143, 40, 87, 0.22), rgba(143, 40, 87, 0.22)) left bottom / 100% 1px no-repeat;
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+body.light-theme .card a:hover,
+html.light-theme-loading .card a:hover {
+  color: #64193b;
+  background-color: rgba(143, 40, 87, 0.08);
+  box-shadow: 0 0 0 1px rgba(143, 40, 87, 0.08);
 }
 
 body.light-theme .hardware-box h3,
 html.light-theme-loading .hardware-box h3 {
-  color: #db2777;
+  color: #be185d;
 }
 
 body.light-theme .member-card:hover,
 body.light-theme .profile-links a:hover,
 body.light-theme .spec-card:hover,
+body.light-theme .project-card:hover,
 html.light-theme-loading .member-card:hover,
 html.light-theme-loading .profile-links a:hover,
-html.light-theme-loading .spec-card:hover {
-  background: #fdf2f8;
+html.light-theme-loading .spec-card:hover,
+html.light-theme-loading .project-card:hover {
+  background: #fff7fb;
   border-color: #ec4899;
 }
 
 body.light-theme .profile-links a,
 html.light-theme-loading .profile-links a {
   background: #ffffff;
-  border-color: #e5e7eb;
+  border-color: #dbe3ee;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
+}
+
+body.light-theme .profile-picture,
+body.light-theme .profile-large,
+body.light-theme .project-image,
+html.light-theme-loading .profile-picture,
+html.light-theme-loading .profile-large,
+html.light-theme-loading .project-image {
+  background: #e2e8f0;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+}
+
+body.light-theme .profile-links a::after,
+html.light-theme-loading .profile-links a::after {
+  background: #ffffff;
+  color: #172033;
+  border-color: #dbe3ee;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
 }
 
 body.light-theme .profile-links img,
@@ -699,20 +771,36 @@ html.light-theme-loading .profile-links img {
   filter: invert(1);
 }
 
+body.light-theme .project-links a,
+html.light-theme-loading .project-links a {
+  color: #8f2857;
+  background: rgba(143, 40, 87, 0.05);
+  border-color: rgba(143, 40, 87, 0.14);
+  padding: 5px 10px;
+}
+
+body.light-theme .project-links a:hover,
+html.light-theme-loading .project-links a:hover {
+  color: #64193b;
+  background: rgba(143, 40, 87, 0.1);
+  border-color: rgba(143, 40, 87, 0.24);
+  box-shadow: 0 6px 16px rgba(100, 25, 59, 0.08);
+}
+
 body.light-theme .footer,
 html.light-theme-loading .footer {
-  border-top-color: #e5e7eb;
+  border-top-color: rgba(203, 213, 225, 0.85);
   color: #64748b;
 }
 
 body.light-theme .footer a,
 html.light-theme-loading .footer a {
-  color: #475569;
+  color: #526174;
 }
 
 body.light-theme .footer a:hover,
 html.light-theme-loading .footer a:hover {
-  color: #db2777;
+  color: #be185d;
 }
 
 /* Mobile */
